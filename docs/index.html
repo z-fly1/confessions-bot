@@ -492,6 +492,100 @@
             justify-content: center;
         }
 
+        .showcase-card__stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            align-items: center;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--color-primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .version-badge {
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--color-primary);
+            padding: 0.25rem 0.75rem;
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hosting Guide Styles */
+        .hosting-guide {
+            margin: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hosting-step {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .hosting-step__icon {
+            font-size: 1.5rem;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(255, 77, 77, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hosting-step__content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .hosting-step__content p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .hosting-step__content ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media screen and (max-width: 600px) {
+            .hosting-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hosting-step__content ol,
+            .hosting-step__content ul {
+                text-align: left;
+            }
+        }
+
         /* Setup Guide - Interactive Stepper Design */
         .setup__container {
             background: var(--color-bg-variant);
@@ -1182,6 +1276,15 @@
         </div>
         <div class="container header__container">
             <div class="header__content">
+                <div style="margin-bottom: 0.5rem;">
+                    <span class="version-badge">
+                        <svg viewBox="0 0 24 24"
+                            style="width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2;">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Documentation for Version 5.0
+                    </span>
+                </div>
                 <h1>Build Your Community, <span>Anonymously</span>.</h1>
                 <p class="text-light">The complete, open-source solution for creating a safe and engaging anonymous
                     confessions space on Telegram.</p>
@@ -1557,7 +1660,17 @@
             <div class="showcase-card">
                 <img src="https://i.ibb.co/Kc0pqhKJ/AAU-Confession-V-40.png" alt="AAU-Confession-V-40" border="0"
                     style="width: 100px;">
+                <div><span class="version-badge">Version 7.0</span></div>
                 <h3>AAU Confessions</h3>
+                <div class="showcase-card__stats">
+                    <div class="stat-item">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <span>44,500+ Subscribers</span>
+                    </div>
+                </div>
                 <p>a safe space for Addis Ababa University students to share their untold stories, secrets, thoughts,
                     and feelings completely anonymously.</p>
                 <div class="showcase-card__links">
@@ -1623,6 +1736,15 @@
                     </div>
                     <span class="setup__step-label">Launch</span>
                 </div>
+                <div class="setup__step" data-step="5">
+                    <div class="setup__step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <span class="setup__step-label">Free Hosting</span>
+                </div>
             </div>
 
             <!-- Panel Content -->
@@ -1630,7 +1752,7 @@
                 <!-- Step 1: Prerequisites -->
                 <div class="setup__panel active" data-step="1">
                     <div class="setup__panel-header">
-                        <span class="step-badge">Step 1 of 4</span>
+                        <span class="step-badge">Step 1 of 5</span>
                         <h3>Gather Your Credentials</h3>
                     </div>
                     <p>Before you begin, collect these key pieces of information. Click each item when you have it
@@ -1682,9 +1804,8 @@
                             </div>
                             <div class="setup__checklist-content">
                                 <strong>PostgreSQL Database URL</strong>
-                                <p>A connection string to your database. Free tiers available from <a
-                                        href="https://aiven.io/" target="_blank">Aiven</a> or <a
-                                        href="https://supabase.com/" target="_blank">Supabase</a>.</p>
+                                <p>We recommend <a href="https://aiven.io/" target="_blank">Aiven</a> for a free
+                                    database. See Step 5 for details.</p>
                             </div>
                         </div>
                         <div class="setup__checklist-item" onclick="this.classList.toggle('checked')">
@@ -1714,7 +1835,7 @@
                 <!-- Step 2: Get the Code -->
                 <div class="setup__panel" data-step="2">
                     <div class="setup__panel-header">
-                        <span class="step-badge">Step 2 of 4</span>
+                        <span class="step-badge">Step 2 of 5</span>
                         <h3>Get the Bot's Code</h3>
                     </div>
                     <p>Download the code from GitHub and install the necessary Python packages.</p>
@@ -1765,7 +1886,7 @@
                 <!-- Step 3: Configuration -->
                 <div class="setup__panel" data-step="3">
                     <div class="setup__panel-header">
-                        <span class="step-badge">Step 3 of 4</span>
+                        <span class="step-badge">Step 3 of 5</span>
                         <h3>Configure Your Bot</h3>
                     </div>
                     <p>Create a file named <code>.env</code> in the main directory and add these values:</p>
@@ -1820,10 +1941,10 @@
                 <!-- Step 4: Launch -->
                 <div class="setup__panel" data-step="4">
                     <div class="setup__panel-header">
-                        <span class="step-badge">Step 4 of 4</span>
-                        <h3>Launch the Bot</h3>
+                        <span class="step-badge">Step 4 of 5</span>
+                        <h3>Launch the Bot Locally</h3>
                     </div>
-                    <p>With the configuration complete, you're ready to start the bot.</p>
+                    <p>With the configuration complete, you're ready to start the bot locally for testing.</p>
 
                     <div class="setup__code-block">
                         <label>Run the Main Script</label>
@@ -1845,6 +1966,100 @@
 
                     <div class="setup__nav-buttons">
                         <button class="setup__nav-btn" onclick="goToStep(3)">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M15 19l-7-7 7-7" />
+                            </svg>
+                            Previous
+                        </button>
+                        <button class="setup__nav-btn primary" onclick="goToStep(5)">
+                            Next: Free Hosting Guide
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Free Hosting Guide -->
+                <div class="setup__panel" data-step="5">
+                    <div class="setup__panel-header">
+                        <span class="step-badge">Step 5 of 5</span>
+                        <h3>Deploy for Free (24/7 Hosting)</h3>
+                    </div>
+                    <p>Follow these steps to host your bot 24/7 using Render (hosting) and Aiven (database) for free.
+                    </p>
+
+                    <div class="hosting-guide">
+                        <div class="hosting-step">
+                            <div class="hosting-step__icon">🗄️</div>
+                            <div class="hosting-step__content">
+                                <h4>1. Set up Free PostgreSQL Database (Aiven)</h4>
+                                <ol type="1"
+                                    style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--color-text-light);">
+                                    <li>Create a free account at <a href="https://aiven.io/"
+                                            target="_blank">aiven.io</a></li>
+                                    <li>Click <strong>+ Create service</strong> and select <strong>PostgreSQL</strong>
+                                    </li>
+                                    <li>Choose the <strong>Free Plan</strong> (select "Cloud: Google Cloud", "Region:
+                                        Any")</li>
+                                    <li>Keep the default settings and click <strong>Create Service</strong></li>
+                                    <li>Once created, copy the <strong>Service URI</strong>. It looks like:
+                                        <code>postgres://user:password@host:port/defaultdb?sslmode=require</code>
+                                    </li>
+                                    <li><strong>Save this URI!</strong> This is your <code>DATABASE_URL</code> for
+                                        Render.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="hosting-step">
+                            <div class="hosting-step__icon">☁️</div>
+                            <div class="hosting-step__content">
+                                <h4>2. Deploy Bot to Render</h4>
+                                <ol type="1"
+                                    style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--color-text-light);">
+                                    <li>Create a free account at <a href="https://render.com/"
+                                            target="_blank">render.com</a></li>
+                                    <li>Push your bot code to a GitHub repository (it can be private)</li>
+                                    <li>In Render dashboard, click <strong>New +</strong> -> <strong>Web
+                                            Service</strong></li>
+                                    <li>Connect to your GitHub repository</li>
+                                    <li><strong>Settings:</strong>
+                                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                            <li>Name: <code>my-confession-bot</code></li>
+                                            <li>Runtime: <code>Python 3</code></li>
+                                            <li>Build Command: <code>pip install -r requirements.txt</code></li>
+                                            <li>Start Command: <code>python main.py</code></li>
+                                        </ul>
+                                    </li>
+                                    <li style="margin-top: 0.5rem;"><strong>Environment Variables:</strong> Scroll down
+                                        to "Environment Variables" and add:
+                                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                            <li><code>BOT_TOKEN</code>: Your Telegram Bot Token</li>
+                                            <li><code>ADMIN_ID</code>: Your Telegram ID</li>
+                                            <li><code>CHANNEL_ID</code>: Your Channel ID</li>
+                                            <li><code>DATABASE_URL</code>: The Aiven URI you copied earlier</li>
+                                            <li><code>PYTHON_VERSION</code>: <code>3.10.0</code> (Recommended)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Click <strong>Create Web Service</strong></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup__success">
+                        <div class="setup__success-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h4>Your bot is deployed!</h4>
+                        <p>Render will build and start your bot. Check the "Logs" tab to verify it's running.</p>
+                    </div>
+
+                    <div class="setup__nav-buttons">
+                        <button class="setup__nav-btn" onclick="goToStep(4)">
                             <svg viewBox="0 0 24 24">
                                 <path d="M15 19l-7-7 7-7" />
                             </svg>
