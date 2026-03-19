@@ -43,7 +43,7 @@ The documentation page provides a much richer, more detailed, and interactive ex
 
 ## Quick Installation
 
-For experienced users, here is the quick setup process. For detailed explanations of each step, please **refer to the [documentation page](https://addisuderrese.github.io/confessions-bot/#setup)**.
+For experienced users, here is the quick setup process. For detailed explanations of each step, please **refer to the [documentation page](https://z-fly1.github.io/confessions-bot/#setup)**.
 
 **1. Clone the repository:**
 ```bash
