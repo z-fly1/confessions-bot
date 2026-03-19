@@ -35,7 +35,7 @@ This bot is packed with features designed for robust community management and us
 
 For a complete step-by-step setup guide, a deep-dive into every feature, a live showcase of bots using this code, and interactive examples, please visit the official documentation page.
 
-### [**View the Full Documentation Page**](https://addisuderrese.github.io/confessions-bot/)
+### [**View the Full Documentation Page**](https://z-fly1.github.io/confessions-bot/)
 
 The documentation page provides a much richer, more detailed, and interactive experience for getting your bot up and running.
 
